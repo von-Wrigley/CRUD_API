@@ -1,0 +1,34 @@
+[
+  {
+    "id": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+    "username": "Pedro Pascal",
+    "age": 222,
+    "hobbies": []
+  },
+  {
+    "id": "230af865-d4f1-4dde-b3d5-62a2a37fdc12",
+    "username": "Tony Soprano",
+    "age": 44,
+    "hobbies": [
+      "Shooting"
+    ]
+  },
+  {
+    "id": "4228948f-bac5-445e-87c4-0a6406ad419f",
+    "username": "Homer Simpson",
+    "age": 33,
+    "hobbies": [
+      "Beer",
+      "acting"
+    ]
+  },
+  {
+    "id": "d7e80717-2d5d-4396-8da7-d5d028577b68",
+    "username": "Maggie Smith",
+    "age": 44,
+    "hobbies": [
+      "Acting",
+      "Cooking"
+    ]
+  }
+]
