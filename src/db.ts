@@ -96,7 +96,6 @@ export const deleteUser =async (id:string)=> {
     const deletedUser =await usersArray.findIndex((x: { id: string; })=> x.id === id)
      
     await  usersArray.splice(deletedUser, 1)
-       console.log(usersArray)
     await fs.writeFile('src/dataUsers.json', JSON.stringify(usersArray, null, 2), "utf-8")
  return {
   message: "The record is found and deleted"

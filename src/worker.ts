@@ -20,9 +20,8 @@ const server = http.createServer(async (req, res) => {
   try {
     const { pathname } = new URL(req.url || '', `http://${req.headers.host}`);
       const userId = pathname.split('/')[3];
-console.log(pathname)
+
    
-    
       if (pathname.trim() === '/api/users' && req.method === 'GET') {
       res.writeHead(200, { 'Content-Type': 'application/json' });
       return res.end(JSON.stringify(await getUsers()));
@@ -141,7 +140,7 @@ console.log(pathname)
   } catch (error) {
     console.error('Request error:', error);
     res.writeHead(500, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify({ message: 'Internal server error' }));
+    res.end(JSON.stringify({ message: `Internal server error. Error: ${error}` }));
   }
 });
 
