@@ -47,7 +47,7 @@ if (cluster.isPrimary) {
     proxyReq.on('error', (err) => {
       console.error('Proxy request error:', err);
       res.writeHead(502);
-      res.end('Bad Gateway');
+      res.end('Bad Gateway. Rstart or send request again, please');
     });
   });
 

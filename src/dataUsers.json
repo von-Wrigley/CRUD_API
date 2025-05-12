@@ -16,19 +16,19 @@
   {
     "id": "4228948f-bac5-445e-87c4-0a6406ad419f",
     "username": "Homer Simpson",
-    "age": 33,
+    "age": 44,
     "hobbies": [
       "Beer",
-      "acting"
+      "singing",
+      "eating"
     ]
   },
   {
-    "id": "d7e80717-2d5d-4396-8da7-d5d028577b68",
-    "username": "Maggie Smith",
-    "age": 44,
+    "id": "b6201151-876a-4d0b-8163-9f66b493ee36",
+    "username": "Zidane",
+    "age": 22,
     "hobbies": [
-      "Acting",
-      "Cooking"
+      "Football"
     ]
   }
 ]

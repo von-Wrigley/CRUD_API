@@ -19,17 +19,17 @@ const PORT = parseInt(process.env.WORKER_PORT || '4000');
 const server = http.createServer(async (req, res) => {
   try {
     const { pathname } = new URL(req.url || '', `http://${req.headers.host}`);
-      const userId = pathname.split('/')[2];
-
+      const userId = pathname.split('/')[3];
+console.log(pathname)
    
     
-      if (pathname.trim() === '/users' && (pathname.trim()).length===6 && req.method === 'GET') {
+      if (pathname.trim() === '/api/users' && req.method === 'GET') {
       res.writeHead(200, { 'Content-Type': 'application/json' });
       return res.end(JSON.stringify(await getUsers()));
     }
     
-    if ( pathname.startsWith('/users/') && req.method === 'GET') {
-          const userId = pathname.split('/')[2];
+    if ( pathname.startsWith('/api/users/') && req.method === 'GET') {
+          const userId = pathname.split('/')[3];
       try {
         if (!isUUID(userId)) {
         res.writeHead(400, { 'Content-Type': 'application/json' });
@@ -57,7 +57,7 @@ const server = http.createServer(async (req, res) => {
 
 
 
-      if (pathname.length > 6 && pathname.startsWith('/users/')   && req.method === 'PUT') {
+      if ( pathname.startsWith('/api/users/')   && req.method === 'PUT') {
                   const body  = (await getPostBodyAsync(req)) as Users;
                      if (!isUUID(userId)) {
         res.writeHead(400, { 'Content-Type': 'application/json' });
@@ -90,7 +90,7 @@ const server = http.createServer(async (req, res) => {
 
 
 
-      if (pathname.length > 6 && req.method === 'DELETE') {
+      if (pathname.length > 6 && pathname.startsWith('/api/users/')  && req.method === 'DELETE') {
 
               if (!isUUID(userId)) {
         res.writeHead(400, { 'Content-Type': 'application/json' });
@@ -118,7 +118,7 @@ const server = http.createServer(async (req, res) => {
 
 
 
-       if (req.method === 'POST') {
+       if (pathname.startsWith('/api/users')  && req.method === 'POST') {
           const body = (await getPostBodyAsync(req)) as Users;
 
       if(!body.username || !body.age || !body.hobbies ){
