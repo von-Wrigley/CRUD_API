@@ -57,7 +57,7 @@ const server = http.createServer(async (req, res) => {
 
 
 
-      if (pathname.length > 6 && pathname.trim() === '/users'   && req.method === 'PUT') {
+      if (pathname.length > 6 && pathname.startsWith('/users/')   && req.method === 'PUT') {
                   const body  = (await getPostBodyAsync(req)) as Users;
                      if (!isUUID(userId)) {
         res.writeHead(400, { 'Content-Type': 'application/json' });

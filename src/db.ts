@@ -46,10 +46,11 @@ export const createUser = async(body:Users)=> {
      const usersArray = JSON.parse(users);
       // let hob = []
       // hob.push(body.hobbies)
+      const newID = uuidv4()
     
       usersArray.push(
 {
-    id: uuidv4(),
+    id: newID,
     username: body.username ,
     age: body.age,
       hobbies: body.hobbies
@@ -57,7 +58,7 @@ export const createUser = async(body:Users)=> {
         )
 
     await fs.writeFile('src/dataUsers.json', JSON.stringify(usersArray, null, 2), "utf-8")
-    const x = await getUsers()
+    const x = await findUser(newID)
      return x
   } catch (error) {
      console.log(error)
@@ -78,7 +79,7 @@ export const putUser = async(body:Users, userId:string)=> {
 
 
     await fs.writeFile('src/dataUsers.json', JSON.stringify(usersArray2, null, 2), "utf-8")
-    const x = await getUsers()
+    const x = await findUser(userId)
      return x
   } catch (error) {
      console.log(error)
