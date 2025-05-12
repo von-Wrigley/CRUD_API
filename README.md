@@ -14,9 +14,10 @@
       - GET
          - api/users - We should get all the users
          - api/users/{userId} 
-                - We can expect three responses: 1. If req is good => status code 200 and response: user info
-                                                 2. If id isnt of instance of UUID => status code 400 and message: Invalid id (must be UUID)
-                                                 3. If there is no user with specified id => status code 404  and message: User not found
+                - We can expect three responses:
+                      1. If req is good => status code 200 and response: user info
+                      2. If id isnt of instance of UUID => status code 400 and message: Invalid id (must be UUID)
+                      3. If there is no user with specified id => status code 404  and message: User not found
      - POST 
         - api/users
                 - We can expect three responses: 1. If req is good => status code 201 and response: created user info
