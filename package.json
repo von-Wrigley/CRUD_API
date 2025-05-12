@@ -2,7 +2,16 @@
   "devDependencies": {
     "@types/node": "^22.15.17"
   },
+  "scripts": {
+    "start:dev": "nodemon",
+    "start:multi": "nodemon",
+    "start:prod": "npm run build && node dist/master.js",
+    "test": "jest",
+    "build": "tsc"
+  },
   "dependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3",
     "uuid": "^11.1.0"
   }
 }
